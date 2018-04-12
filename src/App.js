@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import AppBar from 'material-ui/AppBar';
+import Avatar from 'material-ui/Avatar';
 import Nav from './Nav';
 
 import './App.css';
@@ -26,7 +27,7 @@ export default class App extends Component {
             <AppBar
               title="Title"
               onLeftIconButtonClick={this.menuToggle}
-              iconClassNameRight="muidocs-icon-navigation-expand-more"
+              iconElementRight={<Avatar size={48} src={require('./images/biopic.jpg')} />}
             />
 
             <Nav menuToggle={this.menuToggle} menuOpen={this.state.menuOpen} />
