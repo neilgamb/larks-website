@@ -16,10 +16,28 @@ import Home from './Home';
 import About from './About';
 import Contact from './Contact';
 
-const theme = createMuiTheme();
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#37474F',
+    },
+    secondary: {
+      light: '#E0E0E0',
+      main: '#616161',
+      contrastText: '#F5F5F5',
+    },
+  },
+  typography: {
+    fontFamily: "'Montserrat', sans-serif",
+  },
+});
 
 const styles = {
-  flex: {
+  appBar: {
+    backgroundColor: 'white',
+    boxShadow: 'none',
+  },
+  appBarHeader: {
     flexGrow: 1,
   },
   menuButton: {
@@ -42,13 +60,13 @@ class App extends Component {
       <MuiThemeProvider theme={theme}>
         <Router>
           <Fragment>
-            <AppBar position="static">
+            <AppBar className={classes.appBar} position="static">
               <Toolbar>
                 <IconButton onClick={this.menuToggle} className={classes.menuButton}>
                   <Menu />
                 </IconButton>
-                <Typography variant="title" className={classes.flex}>
-                  My Website
+                <Typography variant="title" className={classes.appBarHeader}>
+                  Lark Elliott
                 </Typography>
               </Toolbar>
             </AppBar>
