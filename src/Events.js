@@ -15,7 +15,7 @@ const photos = [
   { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3 },
 ];
 
-class Home extends Component {
+class Events extends Component {
   state = { currentImage: 0 };
 
   openLightbox = (event, obj) => {
@@ -61,4 +61,4 @@ class Home extends Component {
 
 const styles = {};
 
-export default withStyles(styles)(Home);
+export default withStyles(styles)(Events);

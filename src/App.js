@@ -13,6 +13,10 @@ import {
 import { Menu } from '@material-ui/icons';
 import Navigation from './Navigation';
 import Home from './Home';
+import Family from './Family';
+import Children from './Children';
+import Events from './Events';
+import Proofing from './Proofing';
 import About from './About';
 import Contact from './Contact';
 
@@ -74,6 +78,10 @@ class App extends Component {
             <Navigation open={menuOpen} menuToggle={this.menuToggle} />
 
             <Route path="/home" component={Home} />
+            <Route path="/family" component={Family} />
+            <Route path="/children" component={Children} />
+            <Route path="/events" component={Events} />
+            <Route path="/proofing" component={Proofing} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
           </Fragment>

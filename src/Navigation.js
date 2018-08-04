@@ -12,11 +12,11 @@ const styles = {
     transition: '250ms',
   },
   menuItem: {
-    padding: '20px 100px 20px 25px',
+    padding: '10px 100px 10px 25px',
   },
   menuItemOne: {
-    padding: '20px 100px 20px 25px',
-    marginTop: 60,
+    padding: '10px 100px 10px 25px',
+    marginTop: 75,
   },
   navLink: {
     textDecoration: 'none',
@@ -39,6 +39,38 @@ const Navigation = props => (
       to="/home"
     >
       <MenuItem className={props.classes.menuItemOne}>Home</MenuItem>
+    </NavLink>
+    <NavLink
+      className={props.classes.navLink}
+      onClick={props.menuToggle}
+      activeclass="active"
+      to="/family"
+    >
+      <MenuItem className={props.classes.menuItem}>Family</MenuItem>
+    </NavLink>
+    <NavLink
+      className={props.classes.navLink}
+      onClick={props.menuToggle}
+      activeclass="active"
+      to="/children"
+    >
+      <MenuItem className={props.classes.menuItem}>Just the Kids</MenuItem>
+    </NavLink>
+    <NavLink
+      className={props.classes.navLink}
+      onClick={props.menuToggle}
+      activeclass="active"
+      to="/events"
+    >
+      <MenuItem className={props.classes.menuItem}>Events</MenuItem>
+    </NavLink>
+    <NavLink
+      className={props.classes.navLink}
+      onClick={props.menuToggle}
+      activeclass="active"
+      to="/proofing"
+    >
+      <MenuItem className={props.classes.menuItem}>Proofing</MenuItem>
     </NavLink>
     <NavLink
       className={props.classes.navLink}
