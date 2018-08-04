@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import {
   AppBar,
-  Button,
   createMuiTheme,
   IconButton,
   MuiThemeProvider,
@@ -20,9 +19,6 @@ import Contact from './Contact';
 const theme = createMuiTheme();
 
 const styles = {
-  root: {
-    flexGrow: 1,
-  },
   flex: {
     flexGrow: 1,
   },
@@ -54,7 +50,6 @@ class App extends Component {
                 <Typography variant="title" className={classes.flex}>
                   My Website
                 </Typography>
-                <Button>Login</Button>
               </Toolbar>
             </AppBar>
 
