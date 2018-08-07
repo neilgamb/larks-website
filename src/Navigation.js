@@ -14,10 +14,6 @@ const styles = {
   menuItem: {
     padding: '10px 100px 10px 25px',
   },
-  menuItemOne: {
-    padding: '10px 100px 10px 25px',
-    marginTop: 75,
-  },
   navLink: {
     textDecoration: 'none',
   },
@@ -32,62 +28,65 @@ const Navigation = props => (
     >
       <Close />
     </IconButton>
-    <NavLink
-      className={props.classes.navLink}
-      onClick={props.menuToggle}
-      activeclass="active"
-      to="/home"
-    >
-      <MenuItem className={props.classes.menuItemOne}>Home</MenuItem>
-    </NavLink>
-    <NavLink
-      className={props.classes.navLink}
-      onClick={props.menuToggle}
-      activeclass="active"
-      to="/family"
-    >
-      <MenuItem className={props.classes.menuItem}>Family</MenuItem>
-    </NavLink>
-    <NavLink
-      className={props.classes.navLink}
-      onClick={props.menuToggle}
-      activeclass="active"
-      to="/children"
-    >
-      <MenuItem className={props.classes.menuItem}>Just the Kids</MenuItem>
-    </NavLink>
-    <NavLink
-      className={props.classes.navLink}
-      onClick={props.menuToggle}
-      activeclass="active"
-      to="/events"
-    >
-      <MenuItem className={props.classes.menuItem}>Events</MenuItem>
-    </NavLink>
-    <NavLink
-      className={props.classes.navLink}
-      onClick={props.menuToggle}
-      activeclass="active"
-      to="/proofing"
-    >
-      <MenuItem className={props.classes.menuItem}>Proofing</MenuItem>
-    </NavLink>
-    <NavLink
-      className={props.classes.navLink}
-      onClick={props.menuToggle}
-      activeclass="active"
-      to="/about"
-    >
-      <MenuItem className={props.classes.menuItem}>About</MenuItem>
-    </NavLink>
-    <NavLink
-      className={props.classes.navLink}
-      onClick={props.menuToggle}
-      activeclass="active"
-      to="/contact"
-    >
-      <MenuItem className={props.classes.menuItem}>Contact</MenuItem>
-    </NavLink>
+    <div style={{ marginTop: 75 }}>
+      <NavLink
+        exact
+        className={props.classes.navLink}
+        onClick={props.menuToggle}
+        activeclass="active"
+        to="/"
+      >
+        <MenuItem className={props.classes.menuItem}>Home</MenuItem>
+      </NavLink>
+      <NavLink
+        className={props.classes.navLink}
+        onClick={props.menuToggle}
+        activeclass="active"
+        to="/family"
+      >
+        <MenuItem className={props.classes.menuItem}>Family</MenuItem>
+      </NavLink>
+      <NavLink
+        className={props.classes.navLink}
+        onClick={props.menuToggle}
+        activeclass="active"
+        to="/children"
+      >
+        <MenuItem className={props.classes.menuItem}>Just the Kids</MenuItem>
+      </NavLink>
+      <NavLink
+        className={props.classes.navLink}
+        onClick={props.menuToggle}
+        activeclass="active"
+        to="/events"
+      >
+        <MenuItem className={props.classes.menuItem}>Events</MenuItem>
+      </NavLink>
+      <NavLink
+        className={props.classes.navLink}
+        onClick={props.menuToggle}
+        activeclass="active"
+        to="/proofing"
+      >
+        <MenuItem className={props.classes.menuItem}>Proofing</MenuItem>
+      </NavLink>
+      <NavLink
+        className={props.classes.navLink}
+        onClick={props.menuToggle}
+        activeclass="active"
+        to="/about"
+      >
+        <MenuItem className={props.classes.menuItem}>About</MenuItem>
+      </NavLink>
+      <NavLink
+        className={props.classes.navLink}
+        onClick={props.menuToggle}
+        activeclass="active"
+        to="/contact"
+      >
+        <MenuItem className={props.classes.menuItem}>Contact</MenuItem>
+      </NavLink>
+    </div>
   </Drawer>
 );
 

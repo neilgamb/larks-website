@@ -41,11 +41,11 @@ class Home extends Component {
     });
   };
   render() {
-    // const { classes } = this.props;
+    const { galleryColumns } = this.props;
     return (
       <Fragment>
         {/* <Typography variant="title">Home</Typography> */}
-        <Gallery photos={photos} columns={1} onClick={this.openLightbox} />
+        <Gallery photos={photos} columns={galleryColumns} onClick={this.openLightbox} />
         <Lightbox
           images={photos}
           onClose={this.closeLightbox}

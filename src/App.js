@@ -19,6 +19,7 @@ import Events from './Events';
 import Proofing from './Proofing';
 import About from './About';
 import Contact from './Contact';
+import './App.css';
 
 const theme = createMuiTheme({
   palette: {
@@ -51,14 +52,27 @@ const styles = {
 };
 
 class App extends Component {
-  state = { menuOpen: false };
+  state = { menuOpen: false, galleryColumns: 2 };
 
   menuToggle = () => {
     this.setState({ menuOpen: !this.state.menuOpen });
   };
 
+  componentWillMount = () => {
+    const screenWidth = window.screen.width;
+    let galleryColumns;
+    if (screenWidth > 1000) {
+      galleryColumns = 3;
+    } else if (screenWidth > 500 && screenWidth <= 1000) {
+      galleryColumns = 2;
+    } else {
+      galleryColumns = 1;
+    }
+    this.setState({ galleryColumns });
+  };
+
   render() {
-    const { menuOpen } = this.state;
+    const { menuOpen, galleryColumns } = this.state;
     const { classes } = this.props;
     return (
       <MuiThemeProvider theme={theme}>
@@ -77,10 +91,23 @@ class App extends Component {
 
             <Navigation open={menuOpen} menuToggle={this.menuToggle} />
 
-            <Route path="/home" component={Home} />
-            <Route path="/family" component={Family} />
-            <Route path="/children" component={Children} />
-            <Route path="/events" component={Events} />
+            <Route
+              exact
+              path="/"
+              render={props => <Home {...props} galleryColumns={galleryColumns} />}
+            />
+            <Route
+              path="/family"
+              render={props => <Family {...props} galleryColumns={galleryColumns} />}
+            />
+            <Route
+              path="/children"
+              render={props => <Children {...props} galleryColumns={galleryColumns} />}
+            />
+            <Route
+              path="/events"
+              render={props => <Events {...props} galleryColumns={galleryColumns} />}
+            />
             <Route path="/proofing" component={Proofing} />
             <Route path="/about" component={About} />
             <Route path="/contact" component={Contact} />
