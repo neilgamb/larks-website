@@ -98,6 +98,9 @@ const theme = createMuiTheme({
       main: '#616161',
       contrastText: '#F5F5F5',
     },
+    text: {
+      secondary: '#ccc',
+    },
   },
   typography: {
     fontFamily: "'Montserrat', sans-serif",
