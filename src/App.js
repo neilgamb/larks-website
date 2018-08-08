@@ -21,42 +21,8 @@ import About from './About';
 import Contact from './Contact';
 import './App.css';
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#37474F',
-    },
-    secondary: {
-      light: '#E0E0E0',
-      main: '#616161',
-      contrastText: '#F5F5F5',
-    },
-  },
-  typography: {
-    fontFamily: "'Montserrat', sans-serif",
-  },
-});
-
-const styles = {
-  appBar: {
-    backgroundColor: 'white',
-    boxShadow: 'none',
-  },
-  appBarHeader: {
-    flexGrow: 1,
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
-};
-
 class App extends Component {
   state = { menuOpen: false, galleryColumns: 2 };
-
-  menuToggle = () => {
-    this.setState({ menuOpen: !this.state.menuOpen });
-  };
 
   componentWillMount = () => {
     const screenWidth = window.screen.width;
@@ -69,6 +35,10 @@ class App extends Component {
       galleryColumns = 1;
     }
     this.setState({ galleryColumns });
+  };
+
+  menuToggle = () => {
+    this.setState({ menuOpen: !this.state.menuOpen });
   };
 
   render() {
@@ -117,6 +87,36 @@ class App extends Component {
     );
   }
 }
+
+const theme = createMuiTheme({
+  palette: {
+    primary: {
+      main: '#37474F',
+    },
+    secondary: {
+      light: '#E0E0E0',
+      main: '#616161',
+      contrastText: '#F5F5F5',
+    },
+  },
+  typography: {
+    fontFamily: "'Montserrat', sans-serif",
+  },
+});
+
+const styles = {
+  appBar: {
+    backgroundColor: 'white',
+    boxShadow: 'none',
+  },
+  appBarHeader: {
+    flexGrow: 1,
+  },
+  menuButton: {
+    marginLeft: -12,
+    marginRight: 20,
+  },
+};
 
 export default withStyles(styles)(App);
 
