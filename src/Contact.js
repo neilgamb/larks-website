@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import { Grid, Paper, Typography, withStyles } from '@material-ui/core';
+import { ButtonBase, Grid, Paper, TextField, Typography, withStyles } from '@material-ui/core';
 import { Phone, Email } from '@material-ui/icons';
 
 const styles = theme => ({
@@ -71,6 +71,26 @@ function Contact(props) {
               <Typography align="left" variant="subheading">
                 Reach Out!
               </Typography>
+              <form method="POST" action="https://formspree.io/neilgamb@gmail.com">
+                <TextField
+                  type="email"
+                  name="email"
+                  label="Email"
+                  placeholder="your@email.com"
+                  margin="normal"
+                />
+                <br />
+                <TextField
+                  placeholder="Type your message here"
+                  label="Message"
+                  name="message"
+                  multiline
+                  rows="4"
+                  margin="normal"
+                />
+                <br />
+                <ButtonBase type="submit">Send</ButtonBase>
+              </form>
             </Paper>
           </Grid>
         </Grid>
