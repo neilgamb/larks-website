@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { AppBar, Toolbar, Typography, withStyles } from '@material-ui/core';
+import { AppBar, Grid, Paper, Toolbar, Typography, withStyles } from '@material-ui/core';
 
 const About = props => (
   <Fragment>
@@ -11,11 +11,38 @@ const About = props => (
         </Typography>
       </Toolbar>
     </AppBar>
-    <Typography gutterBottom>Detail coming soon</Typography>
+
+    <div className={props.classes.root}>
+      <Grid container spacing={8}>
+        <Grid item xs={12} sm={6}>
+          <Paper elevation={0} className={props.classes.paper}>
+            <Typography align="left" variant="subheading">
+              Grid 1
+            </Typography>
+          </Paper>
+        </Grid>
+        <Grid item xs={12}>
+          <Paper elevation={0} className={props.classes.paper}>
+            <Typography align="left" variant="subheading">
+              Grid 2
+            </Typography>
+          </Paper>
+        </Grid>
+      </Grid>
+    </div>
   </Fragment>
 );
 
-const styles = {
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  paper: {
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
   PageTitle: {
     marginLeft: 180,
   },
@@ -29,7 +56,7 @@ const styles = {
   appBarHeader: {
     flexGrow: 1,
   },
-};
+});
 
 export default withStyles(styles)(About);
 

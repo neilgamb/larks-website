@@ -51,7 +51,7 @@ function Contact(props) {
             </Paper>
           </Grid>
           <Grid item xs={12}>
-            <Paper elevation={0} className={classes.paper}>
+            <Paper elevation={0} className={classes.paperContactForm}>
               <form method="POST" action="https://formspree.io/neilgamb@gmail.com">
                 <TextField
                   type="email"
@@ -90,6 +90,9 @@ const styles = theme => ({
   },
   paper: {
     textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+  paperContactForm: {
     color: theme.palette.text.secondary,
   },
   contactItem: {
