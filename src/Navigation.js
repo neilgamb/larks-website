@@ -4,21 +4,6 @@ import { Drawer, MenuItem, IconButton, withStyles } from '@material-ui/core';
 import { Close } from '@material-ui/icons';
 import { NavLink } from 'react-router-dom';
 
-const styles = {
-  closeButton: {
-    position: 'absolute',
-    top: 10,
-    left: 10,
-    transition: '250ms',
-  },
-  menuItem: {
-    padding: '10px 100px 10px 25px',
-  },
-  navLink: {
-    textDecoration: 'none',
-  },
-};
-
 const Navigation = props => (
   <Drawer transitionDuration={300} open={props.open}>
     <IconButton
@@ -68,7 +53,7 @@ const Navigation = props => (
         activeclass="active"
         to="/proofing"
       >
-        <MenuItem className={props.classes.menuItem}>Proofing</MenuItem>
+        <MenuItem className={props.classes.menuItemSec}>Proofing</MenuItem>
       </NavLink>
       <NavLink
         className={props.classes.navLink}
@@ -76,7 +61,7 @@ const Navigation = props => (
         activeclass="active"
         to="/about"
       >
-        <MenuItem className={props.classes.menuItem}>About</MenuItem>
+        <MenuItem className={props.classes.menuItemSec}>About</MenuItem>
       </NavLink>
       <NavLink
         className={props.classes.navLink}
@@ -84,20 +69,39 @@ const Navigation = props => (
         activeclass="active"
         to="/contact"
       >
-        <MenuItem className={props.classes.menuItem}>Contact</MenuItem>
+        <MenuItem className={props.classes.menuItemSec}>Contact</MenuItem>
       </NavLink>
     </div>
   </Drawer>
 );
 
+const styles = theme => ({
+  closeButton: {
+    position: 'absolute',
+    top: 10,
+    left: 10,
+    transition: '250ms',
+  },
+  menuItem: {
+    padding: '10px 100px 10px 25px',
+  },
+  menuItemSec: {
+    padding: '10px 100px 10px 25px',
+    color: theme.palette.text.secondary,
+  },
+  navLink: {
+    textDecoration: 'none',
+  },
+});
+
+export default withStyles(styles)(Navigation);
+
 Navigation.propTypes = {
   open: PropTypes.bool,
   menuToggle: PropTypes.func.isRequired,
-  classes: PropTypes.object,
+  classes: PropTypes.instanceOf(Object).isRequired,
 };
 
 Navigation.defaultProps = {
   open: false,
 };
-
-export default withStyles(styles)(Navigation);

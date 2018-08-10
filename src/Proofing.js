@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { AppBar, Grid, Paper, Toolbar, Typography, withStyles } from '@material-ui/core';
+import { AppBar, Button, Grid, Paper, Toolbar, Typography, withStyles } from '@material-ui/core';
 
 const Proofing = props => (
   <Fragment>
@@ -14,18 +14,20 @@ const Proofing = props => (
 
     <div className={props.classes.root}>
       <Grid container spacing={8}>
-        <Grid item xs={12} sm={6}>
+        <Grid item xs={12}>
           <Paper elevation={0} className={props.classes.paper}>
-            <Typography align="left" variant="subheading">
-              Grid 1
+            <Typography align="left" paragraph variant="subheading">
+              Instructions on how to access / view / order proofs via third party proofing
+              application (ie Pixieset) will go here
             </Typography>
           </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper elevation={0} className={props.classes.paper}>
-            <Typography align="left" variant="subheading">
-              Grid 2
+            <Typography align="left" paragraph variant="subheading">
+              Link to Pixieset will go here
             </Typography>
+            <Button variant="contained">Launch Pixieset!</Button>
           </Paper>
         </Grid>
       </Grid>
@@ -40,7 +42,6 @@ const styles = theme => ({
     paddingRight: 20,
   },
   paper: {
-    textAlign: 'center',
     color: theme.palette.text.secondary,
   },
   PageTitle: {
