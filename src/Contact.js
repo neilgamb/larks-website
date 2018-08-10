@@ -1,47 +1,31 @@
 import React, { Fragment } from 'react';
-import { ButtonBase, Grid, Paper, TextField, Typography, withStyles } from '@material-ui/core';
+import PropTypes from 'prop-types';
+import {
+  AppBar,
+  Toolbar,
+  Button,
+  ButtonBase,
+  Grid,
+  Paper,
+  TextField,
+  Typography,
+  withStyles,
+} from '@material-ui/core';
 import { Phone, Email } from '@material-ui/icons';
-
-const styles = theme => ({
-  root: {
-    flexGrow: 1,
-    paddingLeft: 20,
-    paddingRight: 20,
-  },
-  paper: {
-    textAlign: 'center',
-    color: theme.palette.text.secondary,
-  },
-  contactItem: {
-    display: 'flex',
-  },
-  contactItemType: {
-    width: 75,
-    color: theme.palette.text.secondary,
-  },
-  contactItemValue: {
-    display: 'flex',
-    alignItems: 'center',
-  },
-  contactItemIcon: {
-    fontSize: 18,
-    marginRight: 10,
-  },
-});
 
 function Contact(props) {
   const { classes } = props;
   return (
     <Fragment>
+      <AppBar className={classes.appBar} position="static">
+        <Toolbar>
+          <Typography className={classes.PageTitle} color="secondary" variant="title">
+            {'>> Contact'}
+          </Typography>
+        </Toolbar>
+      </AppBar>
       <div className={classes.root}>
         <Grid container spacing={8}>
-          <Grid item xs={12}>
-            <Paper elevation={0} className={classes.paper}>
-              <Typography align="left" variant="subheading">
-                Contact
-              </Typography>
-            </Paper>
-          </Grid>
           <Grid item xs={12} sm={6}>
             <Paper elevation={0} className={classes.paper}>
               <Typography align="left" variant="subheading">
@@ -68,9 +52,6 @@ function Contact(props) {
           </Grid>
           <Grid item xs={12}>
             <Paper elevation={0} className={classes.paper}>
-              <Typography align="left" variant="subheading">
-                Reach Out!
-              </Typography>
               <form method="POST" action="https://formspree.io/neilgamb@gmail.com">
                 <TextField
                   type="email"
@@ -89,7 +70,9 @@ function Contact(props) {
                   margin="normal"
                 />
                 <br />
-                <ButtonBase type="submit">Send</ButtonBase>
+                <Button>
+                  <ButtonBase type="submit">Send</ButtonBase>
+                </Button>
               </form>
             </Paper>
           </Grid>
@@ -99,4 +82,48 @@ function Contact(props) {
   );
 }
 
+const styles = theme => ({
+  root: {
+    flexGrow: 1,
+    paddingLeft: 20,
+    paddingRight: 20,
+  },
+  paper: {
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
+  },
+  contactItem: {
+    display: 'flex',
+  },
+  contactItemType: {
+    width: 75,
+    color: theme.palette.text.secondary,
+  },
+  contactItemValue: {
+    display: 'flex',
+    alignItems: 'center',
+  },
+  contactItemIcon: {
+    fontSize: 18,
+    marginRight: 10,
+  },
+  PageTitle: {
+    marginLeft: 180,
+  },
+  appBar: {
+    position: 'absolute',
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+    top: 0,
+    zIndex: -1,
+  },
+  appBarHeader: {
+    flexGrow: 1,
+  },
+});
+
 export default withStyles(styles)(Contact);
+
+Contact.propTypes = {
+  classes: PropTypes.instanceOf(Object).isRequired,
+};

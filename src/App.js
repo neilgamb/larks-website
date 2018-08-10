@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import {
   AppBar,
-  createMuiTheme,
   IconButton,
   MuiThemeProvider,
   Toolbar,
@@ -19,6 +18,7 @@ import Events from './Events';
 import Proofing from './Proofing';
 import About from './About';
 import Contact from './Contact';
+import theme from './theme';
 import './App.css';
 
 class App extends Component {
@@ -88,28 +88,9 @@ class App extends Component {
   }
 }
 
-const theme = createMuiTheme({
-  palette: {
-    primary: {
-      main: '#37474F',
-    },
-    secondary: {
-      light: '#E0E0E0',
-      main: '#616161',
-      contrastText: '#F5F5F5',
-    },
-    text: {
-      secondary: '#ccc',
-    },
-  },
-  typography: {
-    fontFamily: "'Montserrat', sans-serif",
-  },
-});
-
 const styles = {
   appBar: {
-    backgroundColor: 'white',
+    backgroundColor: 'transparent',
     boxShadow: 'none',
   },
   appBarHeader: {
@@ -124,5 +105,5 @@ const styles = {
 export default withStyles(styles)(App);
 
 App.propTypes = {
-  classes: PropTypes.object.isRequired,
+  classes: PropTypes.instanceOf(Object).isRequired,
 };

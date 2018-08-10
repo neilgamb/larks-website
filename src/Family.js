@@ -1,5 +1,6 @@
 import React, { Component, Fragment } from 'react';
-import { withStyles } from '@material-ui/core';
+import PropTypes from 'prop-types';
+import { AppBar, Toolbar, Typography, withStyles } from '@material-ui/core';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
 
@@ -41,10 +42,17 @@ class Family extends Component {
     });
   };
   render() {
-    const { galleryColumns } = this.props;
+    const { galleryColumns, classes } = this.props;
     return (
       <Fragment>
-        {/* <Typography variant="title">Home</Typography> */}
+        <AppBar className={classes.appBar} position="static">
+          <Toolbar>
+            <Typography className={classes.PageTitle} color="secondary" variant="title">
+              {'>> Family'}
+            </Typography>
+          </Toolbar>
+        </AppBar>
+
         <Gallery photos={photos} columns={galleryColumns} onClick={this.openLightbox} />
         <Lightbox
           images={photos}
@@ -59,6 +67,25 @@ class Family extends Component {
   }
 }
 
-const styles = {};
+const styles = {
+  PageTitle: {
+    marginLeft: 180,
+  },
+  appBar: {
+    position: 'absolute',
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+    top: 0,
+    zIndex: -1,
+  },
+  appBarHeader: {
+    flexGrow: 1,
+  },
+};
 
 export default withStyles(styles)(Family);
+
+Family.propTypes = {
+  classes: PropTypes.instanceOf(Object).isRequired,
+  galleryColumns: PropTypes.instanceOf(Array).isRequired,
+};

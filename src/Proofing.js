@@ -1,11 +1,16 @@
 import React, { Fragment } from 'react';
-import { Typography, withStyles } from '@material-ui/core';
+import PropTypes from 'prop-types';
+import { AppBar, Toolbar, Typography, withStyles } from '@material-ui/core';
 
-const Proofing = () => (
+const Proofing = props => (
   <Fragment>
-    <Typography gutterBottom variant="headline">
-      Proofing
-    </Typography>
+    <AppBar className={props.classes.appBar} position="static">
+      <Toolbar>
+        <Typography className={props.classes.PageTitle} color="secondary" variant="title">
+          {'>> Proofing'}
+        </Typography>
+      </Toolbar>
+    </AppBar>
     <Typography gutterBottom>Detail coming soon</Typography>
     <Typography>
       This page will include instructions and link to access proofs via a third party proofing
@@ -14,6 +19,24 @@ const Proofing = () => (
   </Fragment>
 );
 
-const styles = {};
+const styles = {
+  PageTitle: {
+    marginLeft: 180,
+  },
+  appBar: {
+    position: 'absolute',
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+    top: 0,
+    zIndex: -1,
+  },
+  appBarHeader: {
+    flexGrow: 1,
+  },
+};
 
 export default withStyles(styles)(Proofing);
+
+Proofing.propTypes = {
+  classes: PropTypes.instanceOf(Object).isRequired,
+};
