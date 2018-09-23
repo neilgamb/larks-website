@@ -19,6 +19,8 @@ import Proofing from './Proofing';
 import About from './About';
 import Contact from './Contact';
 import theme from './theme';
+import logo from './images/logo.png';
+import birdie from './images/birdie.png';
 import './App.css';
 
 class App extends Component {
@@ -54,7 +56,8 @@ class App extends Component {
                   <Menu />
                 </IconButton>
                 <Typography variant="title" className={classes.appBarHeader}>
-                  Lark Elliott
+                  <img className={classes.logo} src={logo} alt="Lark Elliott.com" />
+                  <img className={classes.birdie} src={birdie} alt="Catch the Birdie" />
                 </Typography>
               </Toolbar>
             </AppBar>
@@ -99,6 +102,20 @@ const styles = {
   menuButton: {
     marginLeft: -12,
     marginRight: 20,
+  },
+  logo: {
+    height: 40,
+    position: 'absolute',
+    right: 45,
+    top: 15,
+    zIndex: -1,
+  },
+  birdie: {
+    height: 40,
+    position: 'absolute',
+    right: 5,
+    top: 55,
+    zIndex: -1,
   },
 };
 
