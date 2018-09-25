@@ -6,8 +6,8 @@ const Proofing = props => (
   <Fragment>
     <AppBar className={props.classes.appBar} position="static">
       <Toolbar>
-        <Typography className={props.classes.PageTitle} color="secondary" variant="title">
-          {'>> Proofing'}
+        <Typography className={props.classes.PageTitle} color="secondary" variant="subheading">
+          {'Proofing'}
         </Typography>
       </Toolbar>
     </AppBar>
@@ -45,7 +45,7 @@ const styles = theme => ({
     color: theme.palette.text.secondary,
   },
   PageTitle: {
-    marginLeft: 180,
+    marginLeft: 40,
   },
   appBar: {
     position: 'absolute',

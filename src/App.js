@@ -114,7 +114,7 @@ const styles = {
     height: 40,
     position: 'absolute',
     right: 5,
-    top: 55,
+    top: 5,
     zIndex: -1,
   },
 };

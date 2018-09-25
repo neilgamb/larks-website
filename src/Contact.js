@@ -19,8 +19,8 @@ function Contact(props) {
     <Fragment>
       <AppBar className={classes.appBar} position="static">
         <Toolbar>
-          <Typography className={classes.PageTitle} color="secondary" variant="title">
-            {'>> Contact'}
+          <Typography className={classes.PageTitle} color="secondary" variant="subheading">
+            {'Contact'}
           </Typography>
         </Toolbar>
       </AppBar>
@@ -87,6 +87,7 @@ const styles = theme => ({
     flexGrow: 1,
     paddingLeft: 20,
     paddingRight: 20,
+    marginTop: 40,
   },
   paper: {
     textAlign: 'center',
@@ -111,7 +112,7 @@ const styles = theme => ({
     marginRight: 10,
   },
   PageTitle: {
-    marginLeft: 180,
+    marginLeft: 40,
   },
   appBar: {
     position: 'absolute',

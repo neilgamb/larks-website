@@ -47,8 +47,8 @@ class Children extends Component {
       <Fragment>
         <AppBar className={classes.appBar} position="static">
           <Toolbar>
-            <Typography className={classes.PageTitle} color="secondary" variant="title">
-              {'>> Children'}
+            <Typography className={classes.PageTitle} color="secondary" variant="subheading">
+              {'Children'}
             </Typography>
           </Toolbar>
         </AppBar>
@@ -68,7 +68,7 @@ class Children extends Component {
 
 const styles = {
   PageTitle: {
-    marginLeft: 180,
+    marginLeft: 40,
   },
   appBar: {
     position: 'absolute',

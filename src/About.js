@@ -6,8 +6,8 @@ const About = props => (
   <Fragment>
     <AppBar className={props.classes.appBar} position="static">
       <Toolbar>
-        <Typography className={props.classes.PageTitle} color="secondary" variant="title">
-          {'>> About'}
+        <Typography className={props.classes.PageTitle} color="secondary" variant="subheading">
+          {'About'}
         </Typography>
       </Toolbar>
     </AppBar>
@@ -57,7 +57,7 @@ const styles = theme => ({
     border: '1px solid #f0f0f0',
   },
   PageTitle: {
-    marginLeft: 180,
+    marginLeft: 40,
   },
   appBar: {
     position: 'absolute',
