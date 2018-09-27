@@ -8,7 +8,7 @@ a {
     color: inherit;
 }
 
-img {
+/* img {
     -webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
@@ -16,4 +16,4 @@ img {
 img:hover {
     -webkit-filter: none;
     filter: none;
-}
+} */

@@ -3,17 +3,20 @@ import PropTypes from 'prop-types';
 import { AppBar, Toolbar, Typography, withStyles } from '@material-ui/core';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
+import family from './images/family/index';
 
 const photos = [
-  { src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599', width: 4, height: 3 },
-  { src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3 },
-  { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3 },
-  { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3 },
-  { src: 'https://source.unsplash.com/Dm-qxdynoEc/800x799', width: 1, height: 1 },
-  { src: 'https://source.unsplash.com/qDkso9nvCg0/600x799', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/iecJiKe_RNg/600x799', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/epcsn8Ed8kY/600x799', width: 3, height: 4 },
+  { src: family[0], width: 3, height: 2 }, { src: family[1], width: 2, height: 3 },
+  { src: family[2], width: 2, height: 3 }, { src: family[3], width: 3, height: 2 },
+  { src: family[4], width: 2, height: 3 }, { src: family[5], width: 2, height: 3 },
+  { src: family[6], width: 3, height: 2 }, { src: family[7], width: 2, height: 3 },
+  { src: family[8], width: 3, height: 2 }, { src: family[9], width: 2, height: 3 },
+  { src: family[10], width: 3, height: 2 }, { src: family[11], width: 3, height: 2 },
+  { src: family[12], width: 2, height: 3 }, { src: family[13], width: 3, height: 2 },
+  { src: family[14], width: 3, height: 2 }, { src: family[15], width: 3, height: 2 },
+  { src: family[16], width: 3, height: 2 }, { src: family[17], width: 3, height: 2 },
+  { src: family[18], width: 2, height: 3 }, { src: family[19], width: 3, height: 2 },
+  { src: family[20], width: 3, height: 2 }, { src: family[21], width: 3, height: 2 },
 ];
 
 class Family extends Component {
