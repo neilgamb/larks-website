@@ -30,9 +30,9 @@ const photos = [
   { src: kids[36], width: 2, height: 3 }, { src: kids[37], width: 2, height: 3 },
   { src: kids[38], width: 2, height: 3 }, { src: kids[39], width: 2, height: 3 },
 
-  { src: kids[40], width: 2, height: 3 }, { src: kids[41], width: 2, height: 3 },
-  { src: kids[42], width: 2, height: 3 }, { src: kids[43], width: 2, height: 3 },
-  { src: kids[44], width: 2, height: 3 }, { src: kids[45], width: 2, height: 3 },
+  { src: kids[40], width: 3, height: 2 }, { src: kids[41], width: 3, height: 2 },
+  { src: kids[42], width: 3, height: 2 }, { src: kids[43], width: 2, height: 3 },
+  { src: kids[44], width: 3, height: 2 }, { src: kids[45], width: 2, height: 3 },
   { src: kids[46], width: 2, height: 3 }, { src: kids[47], width: 2, height: 3 },
   { src: kids[48], width: 2, height: 3 }, { src: kids[49], width: 2, height: 3 },
 
@@ -41,7 +41,6 @@ const photos = [
   { src: kids[54], width: 2, height: 3 }, { src: kids[55], width: 2, height: 3 },
   { src: kids[56], width: 2, height: 3 }, { src: kids[57], width: 2, height: 3 },
   { src: kids[58], width: 2, height: 3 }, { src: kids[59], width: 2, height: 3 },
-  { src: kids[60], width: 2, height: 3 }
 ];
 
 class Children extends Component {

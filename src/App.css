@@ -1,9 +1,19 @@
 .active {
-  display: block;
-  background: rgb(231, 231, 231);
+    display: block;
+    background: rgb(231, 231, 231);
 }
 
 a {
-  text-decoration: none;
-  color: inherit;
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+}
+
+img:hover {
+    -webkit-filter: none;
+    filter: none;
 }

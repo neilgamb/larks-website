@@ -57,8 +57,7 @@ import kids_56 from './kids_56.jpg';
 import kids_57 from './kids_57.jpg';
 import kids_58 from './kids_58.jpg';
 import kids_59 from './kids_59.jpg';
-import kids_60 from './kids_60.tif';
-import kids_61 from './kids_61.jpg';
+import kids_60 from './kids_61.jpg';
 
 const kids = [
     kids_01, kids_02, kids_03, kids_04, kids_05,
@@ -73,7 +72,6 @@ const kids = [
     kids_46, kids_47, kids_48, kids_49, kids_50,
     kids_51, kids_52, kids_53, kids_54, kids_55,
     kids_56, kids_57, kids_58, kids_59, kids_60,
-    kids_61
 ];
 
 export default kids;
