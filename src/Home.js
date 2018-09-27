@@ -1,18 +1,21 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
+import home from './images/home/index';
 
 const photos = [
-  { src: 'https://source.unsplash.com/2ShvY8Lf6l0/800x599', width: 4, height: 3 },
-  { src: 'https://source.unsplash.com/Dm-qxdynoEc/800x799', width: 1, height: 1 },
-  { src: 'https://source.unsplash.com/qDkso9nvCg0/600x799', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/iecJiKe_RNg/600x799', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/epcsn8Ed8kY/600x799', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/NQSWvyVRIJk/800x599', width: 4, height: 3 },
-  { src: 'https://source.unsplash.com/zh7GEuORbUw/600x799', width: 3, height: 4 },
-  { src: 'https://source.unsplash.com/PpOHJezOalU/800x599', width: 4, height: 3 },
-  { src: 'https://source.unsplash.com/I1ASdgphUH4/800x599', width: 4, height: 3 },
+  { src: home[0], width: 3, height: 2 }, { src: home[1], width: 2, height: 3 },
+  { src: home[2], width: 2, height: 3 }, { src: home[3], width: 2, height: 3 },
+  { src: home[4], width: 2, height: 3 }, { src: home[5], width: 3, height: 2 },
+  { src: home[6], width: 3, height: 2 }, { src: home[7], width: 2, height: 3 },
+  { src: home[8], width: 2, height: 3 }, { src: home[9], width: 2, height: 3 },
+  { src: home[10], width: 2, height: 3 }, { src: home[11], width: 2, height: 3 },
+  { src: home[12], width: 3, height: 2 }, { src: home[13], width: 2, height: 3 },
+  { src: home[14], width: 2, height: 3 }, { src: home[15], width: 3, height: 2 },
+  { src: home[16], width: 2, height: 3 }, { src: home[17], width: 2, height: 3 },
+  { src: home[18], width: 2, height: 3 }
 ];
 
 class Home extends Component {
@@ -44,7 +47,6 @@ class Home extends Component {
     const { galleryColumns } = this.props;
     return (
       <Fragment>
-        {/* <Typography variant="title">Home</Typography> */}
         <Gallery photos={photos} columns={galleryColumns} onClick={this.openLightbox} />
         <Lightbox
           images={photos}
@@ -62,3 +64,8 @@ class Home extends Component {
 const styles = {};
 
 export default withStyles(styles)(Home);
+
+Home.propTypes = {
+  classes: PropTypes.instanceOf(Object).isRequired,
+  galleryColumns: PropTypes.number.isRequired,
+};

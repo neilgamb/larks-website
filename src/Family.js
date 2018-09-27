@@ -87,5 +87,5 @@ export default withStyles(styles)(Family);
 
 Family.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
-  galleryColumns: PropTypes.instanceOf(Array).isRequired,
+  galleryColumns: PropTypes.number.isRequired,
 };

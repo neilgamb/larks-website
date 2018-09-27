@@ -86,5 +86,5 @@ export default withStyles(styles)(Events);
 
 Events.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
-  galleryColumns: PropTypes.instanceOf(Array).isRequired,
+  galleryColumns: PropTypes.number.isRequired,
 };

@@ -1,6 +1,7 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+
 import {
   AppBar,
   IconButton,
@@ -98,6 +99,8 @@ const styles = {
   },
   appBarHeader: {
     flexGrow: 1,
+    height: '100%',
+    width: '100%'
   },
   menuButton: {
     marginLeft: -12,
