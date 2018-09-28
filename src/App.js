@@ -1,6 +1,6 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
 import {
   AppBar,
@@ -52,13 +52,15 @@ class App extends Component {
         <Router>
           <Fragment>
             <AppBar className={classes.appBar} position="static">
-              <Toolbar>
+              <Toolbar className={classes.toolBar}>
                 <IconButton onClick={this.menuToggle} className={classes.menuButton}>
                   <Menu />
                 </IconButton>
                 <Typography variant="title" className={classes.appBarHeader}>
-                  <img className={classes.logo} src={logo} alt="Lark Elliott.com" />
-                  <img className={classes.birdie} src={birdie} alt="Catch the Birdie" />
+                  <Link className={classes.logoWrapper} to="/">
+                    <img className={classes.logo} src={logo} alt="Lark Elliott.com" />
+                    <img className={classes.birdie} src={birdie} alt="Catch the Birdie" />
+                  </Link>
                 </Typography>
               </Toolbar>
             </AppBar>
@@ -98,13 +100,22 @@ const styles = {
     boxShadow: 'none',
   },
   appBarHeader: {
-    flexGrow: 1,
+    width: '50%',
+    height: 50
+  },
+  toolBar: {
     height: '100%',
-    width: '100%'
+    paddingRight: 0,
+    justifyContent: 'space-between'
   },
   menuButton: {
     marginLeft: -12,
     marginRight: 20,
+  },
+  logoWrapper: {
+    height: '100%',
+    width: '100%',
+    display: 'inline-block'
   },
   logo: {
     height: 40,
