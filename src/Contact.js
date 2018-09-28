@@ -31,9 +31,9 @@ function Contact(props) {
               <Typography align="left" variant="subheading">
                 <div className={classes.contactItem}>
                   <div className={classes.contactItemType}>Email</div>
-                  <a href="mailto:neilgamb@gmail.com" target="_blank" rel="noopener noreferrer">
+                  <a href="mailto:lark@larkelliott.com" target="_blank" rel="noopener noreferrer">
                     <div className={classes.contactItemValue}>
-                      <Email className={classes.contactItemIcon} />neilgamb@gmail.com
+                      <Email className={classes.contactItemIcon} />lark@larkelliott.com
                     </div>
                   </a>
                 </div>
@@ -41,24 +41,48 @@ function Contact(props) {
               <Typography align="left" variant="subheading">
                 <div className={classes.contactItem}>
                   <div className={classes.contactItemType}>Phone</div>
-                  <a href="tel:1-704-576-3165">
+                  <a href="tel:1-704-968-5907">
                     <div className={classes.contactItemValue}>
-                      <Phone className={classes.contactItemIcon} />704.576.3165
+                      <Phone className={classes.contactItemIcon} />704.968.5907
+                    </div>
+                  </a>
+                </div>
+              </Typography>
+              <Typography align="left" variant="subheading">
+                <div className={classes.contactItem}>
+                  <div className={classes.contactItemType}>Insta</div>
+                  <a href="https://www.instagram.com/larkelliott/">
+                    <div className={classes.contactItemValue}>
+                      <div className={classes.contactItemIcon}><i class="fab fa-instagram"></i></div>
+                      <Typography>@larkelliott</Typography>
+                    </div>
+                  </a>
+                </div>
+              </Typography>
+              <Typography align="left" variant="subheading">
+                <div className={classes.contactItem}>
+                  <div className={classes.contactItemType}>Facebook</div>
+                  <a href="https://www.facebook.com/lark.elliott">
+                    <div className={classes.contactItemValue}>
+                      <div className={classes.contactItemIcon}><i class="fab fa-facebook-square"></i></div>
+                      <Typography>lark.elliott</Typography>
                     </div>
                   </a>
                 </div>
               </Typography>
             </Paper>
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ marginTop: 20 }}>
+            <Typography variant="title">Send Me A Message!</Typography>
             <Paper elevation={0} className={classes.paperContactForm}>
-              <form method="POST" action="https://formspree.io/neilgamb@gmail.com">
+              <form method="POST" action="https://formspree.io/lark@larkelliott.com">
                 <TextField
                   type="email"
                   name="email"
                   label="Email"
                   placeholder="your@email.com"
                   margin="normal"
+                  style={{ minWidth: 300 }}
                 />
                 <br />
                 <TextField
@@ -68,9 +92,10 @@ function Contact(props) {
                   multiline
                   rows="4"
                   margin="normal"
+                  style={{ minWidth: 300 }}
                 />
                 <br />
-                <Button>
+                <Button variant="contained" style={{ marginTop: 20 }}>
                   <ButtonBase type="submit">Send</ButtonBase>
                 </Button>
               </form>
@@ -98,10 +123,12 @@ const styles = theme => ({
   },
   contactItem: {
     display: 'flex',
+    marginTop: 10
   },
   contactItemType: {
     width: 75,
     color: theme.palette.text.secondary,
+    display: 'none'
   },
   contactItemValue: {
     display: 'flex',
