@@ -1,13 +1,15 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Grid, Paper, Typography, withStyles } from '@material-ui/core';
+import Header from './Header';
 
-const Proofing = props => (
+const Proofing = ({ classes, menuToggle }) => (
   <Fragment>
-    <div className={props.classes.root}>
+    <Header title="Proofing" menuToggle={menuToggle} />
+    <div className={classes.root}>
       <Grid container spacing={8}>
         <Grid item xs={12}>
-          <Paper elevation={0} className={props.classes.paper}>
+          <Paper elevation={0} className={classes.paper}>
             <Typography align="left" paragraph variant="subheading">
               Instructions on how to access / view / order proofs via third party proofing
               application (ie Pixieset) will go here
@@ -15,7 +17,7 @@ const Proofing = props => (
           </Paper>
         </Grid>
         <Grid item xs={12}>
-          <Paper elevation={0} className={props.classes.paper}>
+          <Paper elevation={0} className={classes.paper}>
             <Typography align="left" paragraph variant="subheading">
               Link to Pixieset will go here
             </Typography>
@@ -42,4 +44,5 @@ export default withStyles(styles)(Proofing);
 
 Proofing.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
+  menuToggle: PropTypes.func.isRequired,
 };

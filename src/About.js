@@ -1,13 +1,15 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Paper, Typography, withStyles } from '@material-ui/core';
+import Header from './Header';
 
-const About = props => (
+const About = ({ classes, menuToggle }) => (
   <Fragment>
-    <div className={props.classes.root}>
+    <Header title="About" menuToggle={menuToggle} />
+    <div className={classes.root}>
       <Grid container spacing={8}>
         <Grid item xs={12} sm={6}>
-          <Paper elevation={0} className={props.classes.paper}>
+          <Paper elevation={0} className={classes.paper}>
             <Typography align="justify" variant="subheading">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin semper, ipsum ut
               condimentum pulvinar, ligula diam accumsan mi, eget tempor mauris est pretium erat. In
@@ -23,8 +25,8 @@ const About = props => (
             </Typography>
           </Paper>
         </Grid>
-        <Grid item xs={12} sm={6} className={props.classes.gridPic}>
-          <Paper elevation={0} className={props.classes.paper}>
+        <Grid item xs={12} sm={6} className={classes.gridPic}>
+          <Paper elevation={0} className={classes.paper}>
             <Typography align="left" variant="title">
               Picture goes here
             </Typography>
@@ -57,4 +59,5 @@ export default withStyles(styles)(About);
 
 About.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
+  menuToggle: PropTypes.func.isRequired,
 };

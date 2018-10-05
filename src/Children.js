@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
+import Header from './Header';
 import kids from './images/kids/index';
 
 const photos = [
@@ -94,9 +94,10 @@ class Children extends Component {
     });
   };
   render() {
-    const { galleryColumns } = this.props;
+    const { galleryColumns, menuToggle } = this.props;
     return (
       <Fragment>
+        <Header title="Just the Kids" menuToggle={menuToggle} />
         <Gallery photos={photos} columns={galleryColumns} onClick={this.openLightbox} />
         <Lightbox
           images={photos}
@@ -111,10 +112,9 @@ class Children extends Component {
   }
 }
 
-const styles = {};
-
-export default withStyles(styles)(Children);
+export default Children;
 
 Children.propTypes = {
   galleryColumns: PropTypes.number.isRequired,
+  menuToggle: PropTypes.func.isRequired,
 };

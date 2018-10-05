@@ -10,11 +10,13 @@ import {
   withStyles,
 } from '@material-ui/core';
 import { Phone, Email } from '@material-ui/icons';
+import Header from './Header';
 
 function Contact(props) {
-  const { classes } = props;
+  const { classes, menuToggle } = props;
   return (
     <Fragment>
+      <Header title="Contact" menuToggle={menuToggle} />
       <div className={classes.root}>
         <Grid container spacing={8}>
           <Grid item xs={12} sm={6}>
@@ -139,4 +141,5 @@ export default withStyles(styles)(Contact);
 
 Contact.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
+  menuToggle: PropTypes.func.isRequired,
 };

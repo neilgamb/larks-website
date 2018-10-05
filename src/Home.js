@@ -1,8 +1,8 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { withStyles } from '@material-ui/core';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
+import Header from './Header';
 import home from './images/home/index';
 
 const photos = [
@@ -53,9 +53,10 @@ class Home extends Component {
     });
   };
   render() {
-    const { galleryColumns } = this.props;
+    const { galleryColumns, menuToggle } = this.props;
     return (
       <Fragment>
+        <Header title="Lark Elliott" menuToggle={menuToggle} />
         <Gallery photos={photos} columns={galleryColumns} onClick={this.openLightbox} />
         <Lightbox
           images={photos}
@@ -70,10 +71,9 @@ class Home extends Component {
   }
 }
 
-const styles = {};
-
-export default withStyles(styles)(Home);
+export default Home;
 
 Home.propTypes = {
   galleryColumns: PropTypes.number.isRequired,
+  menuToggle: PropTypes.func.isRequired,
 };
