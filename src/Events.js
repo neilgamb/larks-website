@@ -1,17 +1,22 @@
 import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { AppBar, Toolbar, Typography, withStyles } from '@material-ui/core';
+import { withStyles } from '@material-ui/core';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
 import events from './images/events/index';
 
 const photos = [
-  { src: events[0], width: 2, height: 3 }, { src: events[1], width: 3, height: 2 },
-  { src: events[2], width: 3, height: 2 }, { src: events[3], width: 3, height: 2 },
-  { src: events[4], width: 2, height: 3 }, { src: events[5], width: 3, height: 2 },
-  { src: events[6], width: 2, height: 3 }, { src: events[7], width: 3, height: 3 },
-  { src: events[8], width: 3, height: 3 }, { src: events[9], width: 3, height: 2 },
-  { src: events[10], width: 3, height: 2 }
+  { src: events[0], width: 2, height: 3 },
+  { src: events[1], width: 3, height: 2 },
+  { src: events[2], width: 3, height: 2 },
+  { src: events[3], width: 3, height: 2 },
+  { src: events[4], width: 2, height: 3 },
+  { src: events[5], width: 3, height: 2 },
+  { src: events[6], width: 2, height: 3 },
+  { src: events[7], width: 3, height: 3 },
+  { src: events[8], width: 3, height: 3 },
+  { src: events[9], width: 3, height: 2 },
+  { src: events[10], width: 3, height: 2 },
 ];
 
 class Events extends Component {
@@ -40,16 +45,9 @@ class Events extends Component {
     });
   };
   render() {
-    const { galleryColumns, classes } = this.props;
+    const { galleryColumns } = this.props;
     return (
       <Fragment>
-        <AppBar className={classes.appBar} position="static">
-          <Toolbar>
-            <Typography className={classes.PageTitle} color="secondary" variant="subheading">
-              {'Events'}
-            </Typography>
-          </Toolbar>
-        </AppBar>
         <Gallery photos={photos} columns={galleryColumns} onClick={this.openLightbox} />
         <Lightbox
           images={photos}
@@ -64,25 +62,10 @@ class Events extends Component {
   }
 }
 
-const styles = {
-  PageTitle: {
-    marginLeft: 40,
-  },
-  appBar: {
-    position: 'absolute',
-    backgroundColor: 'transparent',
-    boxShadow: 'none',
-    top: 0,
-    zIndex: -1,
-  },
-  appBarHeader: {
-    flexGrow: 1,
-  },
-};
+const styles = {};
 
 export default withStyles(styles)(Events);
 
 Events.propTypes = {
-  classes: PropTypes.instanceOf(Object).isRequired,
   galleryColumns: PropTypes.number.isRequired,
 };

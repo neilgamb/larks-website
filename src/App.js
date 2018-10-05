@@ -20,7 +20,6 @@ import Proofing from './Proofing';
 import About from './About';
 import Contact from './Contact';
 import theme from './theme';
-import logo from './images/logo.png';
 import birdie from './images/birdie.png';
 import './App.css';
 
@@ -53,15 +52,13 @@ class App extends Component {
           <Fragment>
             <AppBar className={classes.appBar} position="static">
               <Toolbar className={classes.toolBar}>
-                <IconButton onClick={this.menuToggle} className={classes.menuButton}>
+                <IconButton onClick={this.menuToggle}>
                   <Menu />
                 </IconButton>
-                <Typography variant="title" className={classes.appBarHeader}>
-                  <Link className={classes.logoWrapper} to="/">
-                    <img className={classes.logo} src={logo} alt="Lark Elliott.com" />
-                    <img className={classes.birdie} src={birdie} alt="Catch the Birdie" />
-                  </Link>
-                </Typography>
+                <Typography variant="title">Lark Elliott</Typography>
+                <Link href="/" to="/">
+                  <img className={classes.birdie} src={birdie} alt="Catch the Birdie" />
+                </Link>
               </Toolbar>
             </AppBar>
 
@@ -100,35 +97,15 @@ const styles = {
     boxShadow: 'none',
   },
   appBarHeader: {
-    width: '50%',
-    height: 50
+    height: 50,
   },
   toolBar: {
     height: '100%',
-    paddingRight: 0,
-    justifyContent: 'space-between'
-  },
-  menuButton: {
-    marginLeft: -12,
-    marginRight: 20,
-  },
-  logoWrapper: {
-    height: '100%',
-    width: '100%',
-    display: 'inline-block'
-  },
-  logo: {
-    height: 40,
-    position: 'absolute',
-    right: 45,
-    top: 15,
-    zIndex: -1,
+    padding: '0px 10px',
+    justifyContent: 'space-between',
   },
   birdie: {
     height: 40,
-    position: 'absolute',
-    right: 5,
-    top: 5,
     zIndex: -1,
   },
 };

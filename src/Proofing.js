@@ -1,17 +1,9 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
-import { AppBar, Button, Grid, Paper, Toolbar, Typography, withStyles } from '@material-ui/core';
+import { Button, Grid, Paper, Typography, withStyles } from '@material-ui/core';
 
 const Proofing = props => (
   <Fragment>
-    <AppBar className={props.classes.appBar} position="static">
-      <Toolbar>
-        <Typography className={props.classes.PageTitle} color="secondary" variant="subheading">
-          {'Proofing'}
-        </Typography>
-      </Toolbar>
-    </AppBar>
-
     <div className={props.classes.root}>
       <Grid container spacing={8}>
         <Grid item xs={12}>
@@ -43,19 +35,6 @@ const styles = theme => ({
   },
   paper: {
     color: theme.palette.text.secondary,
-  },
-  PageTitle: {
-    marginLeft: 40,
-  },
-  appBar: {
-    position: 'absolute',
-    backgroundColor: 'transparent',
-    boxShadow: 'none',
-    top: 0,
-    zIndex: -1,
-  },
-  appBarHeader: {
-    flexGrow: 1,
   },
 });
 

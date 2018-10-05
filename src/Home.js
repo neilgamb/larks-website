@@ -6,16 +6,25 @@ import Lightbox from 'react-images';
 import home from './images/home/index';
 
 const photos = [
-  { src: home[0], width: 3, height: 2 }, { src: home[1], width: 2, height: 3 },
-  { src: home[2], width: 2, height: 3 }, { src: home[3], width: 2, height: 3 },
-  { src: home[4], width: 2, height: 3 }, { src: home[5], width: 3, height: 2 },
-  { src: home[6], width: 3, height: 2 }, { src: home[7], width: 2, height: 3 },
-  { src: home[8], width: 2, height: 3 }, { src: home[9], width: 2, height: 3 },
-  { src: home[10], width: 2, height: 3 }, { src: home[11], width: 2, height: 3 },
-  { src: home[12], width: 3, height: 2 }, { src: home[13], width: 2, height: 3 },
-  { src: home[14], width: 2, height: 3 }, { src: home[15], width: 3, height: 2 },
-  { src: home[16], width: 2, height: 3 }, { src: home[17], width: 2, height: 3 },
-  { src: home[18], width: 2, height: 3 }
+  { src: home[0], width: 3, height: 2 },
+  { src: home[1], width: 2, height: 3 },
+  { src: home[2], width: 2, height: 3 },
+  { src: home[3], width: 2, height: 3 },
+  { src: home[4], width: 2, height: 3 },
+  { src: home[5], width: 3, height: 2 },
+  { src: home[6], width: 3, height: 2 },
+  { src: home[7], width: 2, height: 3 },
+  { src: home[8], width: 2, height: 3 },
+  { src: home[9], width: 2, height: 3 },
+  { src: home[10], width: 2, height: 3 },
+  { src: home[11], width: 2, height: 3 },
+  { src: home[12], width: 3, height: 2 },
+  { src: home[13], width: 2, height: 3 },
+  { src: home[14], width: 2, height: 3 },
+  { src: home[15], width: 3, height: 2 },
+  { src: home[16], width: 2, height: 3 },
+  { src: home[17], width: 2, height: 3 },
+  { src: home[18], width: 2, height: 3 },
 ];
 
 class Home extends Component {
@@ -66,6 +75,5 @@ const styles = {};
 export default withStyles(styles)(Home);
 
 Home.propTypes = {
-  classes: PropTypes.instanceOf(Object).isRequired,
   galleryColumns: PropTypes.number.isRequired,
 };

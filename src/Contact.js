@@ -1,8 +1,6 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import {
-  AppBar,
-  Toolbar,
   Button,
   ButtonBase,
   Grid,
@@ -17,13 +15,6 @@ function Contact(props) {
   const { classes } = props;
   return (
     <Fragment>
-      <AppBar className={classes.appBar} position="static">
-        <Toolbar>
-          <Typography className={classes.PageTitle} color="secondary" variant="subheading">
-            {'Contact'}
-          </Typography>
-        </Toolbar>
-      </AppBar>
       <div className={classes.root}>
         <Grid container spacing={8}>
           <Grid item xs={12} sm={6}>
@@ -53,7 +44,9 @@ function Contact(props) {
                   <div className={classes.contactItemType}>Insta</div>
                   <a href="https://www.instagram.com/larkelliott/">
                     <div className={classes.contactItemValue}>
-                      <div className={classes.contactItemIcon}><i class="fab fa-instagram"></i></div>
+                      <div className={classes.contactItemIcon}>
+                        <i className="fab fa-instagram" />
+                      </div>
                       <Typography>@larkelliott</Typography>
                     </div>
                   </a>
@@ -64,7 +57,9 @@ function Contact(props) {
                   <div className={classes.contactItemType}>Facebook</div>
                   <a href="https://www.facebook.com/lark.elliott">
                     <div className={classes.contactItemValue}>
-                      <div className={classes.contactItemIcon}><i class="fab fa-facebook-square"></i></div>
+                      <div className={classes.contactItemIcon}>
+                        <i className="fab fa-facebook-square" />
+                      </div>
                       <Typography>lark.elliott</Typography>
                     </div>
                   </a>
@@ -123,12 +118,12 @@ const styles = theme => ({
   },
   contactItem: {
     display: 'flex',
-    marginTop: 10
+    marginTop: 10,
   },
   contactItemType: {
     width: 75,
     color: theme.palette.text.secondary,
-    display: 'none'
+    display: 'none',
   },
   contactItemValue: {
     display: 'flex',
@@ -137,19 +132,6 @@ const styles = theme => ({
   contactItemIcon: {
     fontSize: 18,
     marginRight: 10,
-  },
-  PageTitle: {
-    marginLeft: 40,
-  },
-  appBar: {
-    position: 'absolute',
-    backgroundColor: 'transparent',
-    boxShadow: 'none',
-    top: 0,
-    zIndex: -1,
-  },
-  appBarHeader: {
-    flexGrow: 1,
   },
 });
 
