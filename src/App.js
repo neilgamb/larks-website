@@ -1,16 +1,18 @@
 import React, { Component, Fragment } from 'react';
+import PropTypes from 'prop-types';
 import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
-import { MuiThemeProvider } from '@material-ui/core';
+import { AppBar, IconButton, Toolbar, MuiThemeProvider, withStyles } from '@material-ui/core';
+import { Menu } from '@material-ui/icons';
 import Navigation from './Navigation';
 import Home from './Home';
 import Family from './Family';
 import Children from './Children';
 import Events from './Events';
 import Proofing from './Proofing';
-import About from './About';
 import Contact from './Contact';
 import theme from './theme';
 import birdie from './images/birdie.png';
+import logo from './images/logo.png';
 import './App.css';
 
 class App extends Component {
@@ -35,47 +37,56 @@ class App extends Component {
 
   render() {
     const { menuOpen, galleryColumns } = this.state;
+    const { classes } = this.props;
     const screenWidth = window.screen.width;
     return (
       <MuiThemeProvider theme={theme}>
         <Router>
           <Fragment>
+            <AppBar className={classes.appBar} position="static">
+              <Toolbar className={classes.toolBar}>
+                <IconButton onClick={this.menuToggle}>
+                  <Menu />
+                </IconButton>
+                <div style={{ width: '50%', height: 50, margin: 0 }}>
+                  <Link
+                    href="/"
+                    to="/"
+                    style={{ display: 'inline-block', width: '100%', height: '100%' }}
+                  >
+                    <img
+                      style={{
+                        height: 40,
+                        position: 'absolute',
+                        top: 5,
+                        right: 5,
+                        zIndex: -1,
+                      }}
+                      src={birdie}
+                      alt="Catch the Birdie"
+                    />
+                    <img
+                      style={{
+                        position: 'absolute',
+                        height: 40,
+                        top: 15,
+                        right: 45,
+                        zIndex: -1,
+                      }}
+                      src={logo}
+                      alt="Lark Elliott"
+                    />
+                  </Link>
+                </div>
+              </Toolbar>
+            </AppBar>
             <Navigation open={menuOpen} menuToggle={this.menuToggle} />
-            <Link href="/" to="/">
-              <img
-                style={{
-                  height: screenWidth < 500 ? 30 : 40,
-                  position: 'absolute',
-                  top: 10,
-                  right: 10,
-                  zIndex: 2,
-                }}
-                src={birdie}
-                alt="Catch the Birdie"
-              />
-            </Link>
-            <Route
-              exact
-              path="/"
-              render={() => <Home menuToggle={this.menuToggle} galleryColumns={galleryColumns} />}
-            />
-            <Route
-              path="/family"
-              render={() => <Family menuToggle={this.menuToggle} galleryColumns={galleryColumns} />}
-            />
-            <Route
-              path="/children"
-              render={() => (
-                <Children menuToggle={this.menuToggle} galleryColumns={galleryColumns} />
-              )}
-            />
-            <Route
-              path="/events"
-              render={() => <Events menuToggle={this.menuToggle} galleryColumns={galleryColumns} />}
-            />
-            <Route path="/proofing" render={() => <Proofing menuToggle={this.menuToggle} />} />
-            <Route path="/about" render={() => <About menuToggle={this.menuToggle} />} />
-            <Route path="/contact" render={() => <Contact menuToggle={this.menuToggle} />} />
+            <Route exact path="/" render={() => <Home galleryColumns={galleryColumns} />} />
+            <Route path="/family" render={() => <Family galleryColumns={galleryColumns} />} />
+            <Route path="/children" render={() => <Children galleryColumns={galleryColumns} />} />
+            <Route path="/events" render={() => <Events galleryColumns={galleryColumns} />} />
+            <Route path="/proofing" render={() => <Proofing />} />
+            <Route path="/contact" render={() => <Contact />} />
           </Fragment>
         </Router>
       </MuiThemeProvider>
@@ -83,4 +94,20 @@ class App extends Component {
   }
 }
 
-export default App;
+const styles = {
+  appBar: {
+    backgroundColor: 'transparent',
+    boxShadow: 'none',
+  },
+  toolBar: {
+    height: '100%',
+    padding: '0px 10px',
+    justifyContent: 'space-between',
+  },
+};
+
+export default withStyles(styles)(App);
+
+App.propTypes = {
+  classes: PropTypes.instanceOf(Object).isRequired,
+};

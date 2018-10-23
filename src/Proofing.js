@@ -1,11 +1,9 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Grid, Paper, Typography, withStyles } from '@material-ui/core';
-import Header from './Header';
 
-const Proofing = ({ classes, menuToggle }) => (
+const Proofing = ({ classes }) => (
   <Fragment>
-    <Header title="Proofing" menuToggle={menuToggle} />
     <div className={classes.root}>
       <Grid container spacing={8}>
         <Grid item xs={12}>
@@ -44,5 +42,4 @@ export default withStyles(styles)(Proofing);
 
 Proofing.propTypes = {
   classes: PropTypes.instanceOf(Object).isRequired,
-  menuToggle: PropTypes.func.isRequired,
 };

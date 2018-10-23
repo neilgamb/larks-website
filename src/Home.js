@@ -2,7 +2,6 @@ import React, { Component, Fragment } from 'react';
 import PropTypes from 'prop-types';
 import Gallery from 'react-photo-gallery';
 import Lightbox from 'react-images';
-import Header from './Header';
 import home from './images/home/index';
 
 const photos = [
@@ -53,10 +52,9 @@ class Home extends Component {
     });
   };
   render() {
-    const { galleryColumns, menuToggle } = this.props;
+    const { galleryColumns } = this.props;
     return (
       <Fragment>
-        <Header title="Lark Elliott" menuToggle={menuToggle} />
         <Gallery photos={photos} columns={galleryColumns} onClick={this.openLightbox} />
         <Lightbox
           images={photos}
@@ -75,5 +73,4 @@ export default Home;
 
 Home.propTypes = {
   galleryColumns: PropTypes.number.isRequired,
-  menuToggle: PropTypes.func.isRequired,
 };
