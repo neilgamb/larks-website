@@ -7,7 +7,7 @@ const About = ({ classes, menuToggle }) => (
   <Fragment>
     <Header title="About" menuToggle={menuToggle} />
     <div className={classes.root}>
-      <Grid container spacing={8}>
+      <Grid container spacing={40}>
         <Grid item xs={12} sm={6}>
           <Paper elevation={0} className={classes.paper}>
             <Typography align="justify" variant="subheading">

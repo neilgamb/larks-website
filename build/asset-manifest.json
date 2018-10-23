@@ -1,8 +1,8 @@
 {
   "main.css": "static/css/main.62fb53d3.css",
   "main.css.map": "static/css/main.62fb53d3.css.map",
-  "main.js": "static/js/main.7e582154.js",
-  "main.js.map": "static/js/main.7e582154.js.map",
+  "main.js": "static/js/main.8e459bbc.js",
+  "main.js.map": "static/js/main.8e459bbc.js.map",
   "static/media/birdie.png": "static/media/birdie.08532b64.png",
   "static/media/events_01.jpg": "static/media/events_01.79610f3e.jpg",
   "static/media/events_02.jpg": "static/media/events_02.97ad2908.jpg",
@@ -115,6 +115,5 @@
   "static/media/kids_57.jpg": "static/media/kids_57.d4d6ae6e.jpg",
   "static/media/kids_58.jpg": "static/media/kids_58.7311e91c.jpg",
   "static/media/kids_59.jpg": "static/media/kids_59.df4c1aa3.jpg",
-  "static/media/kids_61.jpg": "static/media/kids_61.dde4ee20.jpg",
-  "static/media/logo.png": "static/media/logo.fa5cb5f9.png"
+  "static/media/kids_61.jpg": "static/media/kids_61.dde4ee20.jpg"
 }
