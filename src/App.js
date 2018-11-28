@@ -38,7 +38,6 @@ class App extends Component {
   render() {
     const { menuOpen, galleryColumns } = this.state;
     const { classes } = this.props;
-    const screenWidth = window.screen.width;
     return (
       <MuiThemeProvider theme={theme}>
         <Router>

@@ -51,11 +51,31 @@ class Home extends Component {
       currentImage: this.state.currentImage + 1,
     });
   };
+  randomize = (photoArray) => {
+    let currentIndex = photoArray.length;
+    let temporaryValue;
+    let randomIndex;
+
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      temporaryValue = photoArray[currentIndex];
+      photoArray[currentIndex] = photoArray[randomIndex];
+      photoArray[randomIndex] = temporaryValue;
+    }
+
+    return photoArray;
+  };
   render() {
     const { galleryColumns } = this.props;
     return (
       <Fragment>
-        <Gallery photos={photos} columns={galleryColumns} onClick={this.openLightbox} />
+        <Gallery
+          photos={this.randomize(photos)}
+          columns={galleryColumns}
+          onClick={this.openLightbox}
+        />
         <Lightbox
           images={photos}
           onClose={this.closeLightbox}

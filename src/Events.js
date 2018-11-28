@@ -12,8 +12,8 @@ const photos = [
   { src: events[4], width: 2, height: 3 },
   { src: events[5], width: 3, height: 2 },
   { src: events[6], width: 2, height: 3 },
-  { src: events[7], width: 3, height: 3 },
-  { src: events[8], width: 3, height: 3 },
+  { src: events[7], width: 3, height: 2 },
+  { src: events[8], width: 3, height: 2 },
   { src: events[9], width: 3, height: 2 },
   { src: events[10], width: 3, height: 2 },
 ];
@@ -27,6 +27,7 @@ class Events extends Component {
       lightboxIsOpen: true,
     });
   };
+
   closeLightbox = () => {
     this.setState({
       currentImage: 0,
@@ -43,11 +44,31 @@ class Events extends Component {
       currentImage: this.state.currentImage + 1,
     });
   };
+  randomize = (photoArray) => {
+    let currentIndex = photoArray.length;
+    let temporaryValue;
+    let randomIndex;
+
+    while (currentIndex !== 0) {
+      randomIndex = Math.floor(Math.random() * currentIndex);
+      currentIndex -= 1;
+
+      temporaryValue = photoArray[currentIndex];
+      photoArray[currentIndex] = photoArray[randomIndex];
+      photoArray[randomIndex] = temporaryValue;
+    }
+
+    return photoArray;
+  };
   render() {
     const { galleryColumns } = this.props;
     return (
       <Fragment>
-        <Gallery photos={photos} columns={galleryColumns} onClick={this.openLightbox} />
+        <Gallery
+          photos={this.randomize(photos)}
+          columns={galleryColumns}
+          onClick={this.openLightbox}
+        />
         <Lightbox
           images={photos}
           onClose={this.closeLightbox}
