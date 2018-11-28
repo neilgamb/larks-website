@@ -59,6 +59,14 @@ const Navigation = props => (
         className={props.classes.navLink}
         onClick={props.menuToggle}
         activeclass="active"
+        to="/about"
+      >
+        <MenuItem className={props.classes.menuItemSec}>About</MenuItem>
+      </NavLink>
+      <NavLink
+        className={props.classes.navLink}
+        onClick={props.menuToggle}
+        activeclass="active"
         to="/contact"
       >
         <MenuItem className={props.classes.menuItemSec}>Contact</MenuItem>

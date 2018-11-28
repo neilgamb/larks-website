@@ -8,6 +8,7 @@ import Family from './Family';
 import Children from './Children';
 import Events from './Events';
 import Proofing from './Proofing';
+import About from './About';
 import Contact from './Contact';
 import theme from './theme';
 import './App.css';
@@ -48,6 +49,7 @@ class App extends Component {
               <Route path="/children" render={() => <Children galleryColumns={galleryColumns} />} />
               <Route path="/events" render={() => <Events galleryColumns={galleryColumns} />} />
               <Route path="/proofing" render={() => <Proofing />} />
+              <Route path="/about" render={() => <About />} />
               <Route path="/contact" render={() => <Contact />} />
             </div>
           </Fragment>

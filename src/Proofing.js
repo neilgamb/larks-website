@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Button, Grid, Paper, Typography, withStyles } from '@material-ui/core';
+import logo from './images/logo_bg.png';
 
 const Proofing = ({ classes }) => (
   <Fragment>
@@ -45,6 +46,11 @@ const Proofing = ({ classes }) => (
           </Paper>
         </Grid>
       </Grid>
+      <Grid container direction="row" justify="center" alignItems="flex-end">
+        <Paper elevation={0}>
+          <img style={{ maxWidth: 300 }} src={logo} alt="Catch the Birdie" />
+        </Paper>
+      </Grid>
     </div>
   </Fragment>
 );
@@ -54,7 +60,7 @@ const styles = theme => ({
     flexGrow: 1,
     paddingLeft: 20,
     paddingRight: 20,
-    marginTop: 20,
+    marginTop: 75,
   },
   paper: {
     color: theme.palette.text.secondary,
