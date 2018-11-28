@@ -68,7 +68,11 @@ const photos = [
 ];
 
 class Children extends Component {
-  state = { currentImage: 0 };
+  state = { currentImage: 0, galleryPhotos: photos };
+
+  componentWillMount = () => {
+    this.setState({ galleryPhotos: this.randomize(photos) });
+  };
 
   openLightbox = (event, obj) => {
     this.setState({
@@ -76,24 +80,29 @@ class Children extends Component {
       lightboxIsOpen: true,
     });
   };
+
   closeLightbox = () => {
     this.setState({
       currentImage: 0,
       lightboxIsOpen: false,
     });
   };
+
   gotoPrevious = () => {
     this.setState({
       currentImage: this.state.currentImage - 1,
     });
   };
+
   gotoNext = () => {
     this.setState({
       currentImage: this.state.currentImage + 1,
     });
   };
+
   randomize = (photoArray) => {
-    let currentIndex = photoArray.length;
+    const array = photoArray;
+    let currentIndex = array.length;
     let temporaryValue;
     let randomIndex;
 
@@ -101,18 +110,21 @@ class Children extends Component {
       randomIndex = Math.floor(Math.random() * currentIndex);
       currentIndex -= 1;
 
-      temporaryValue = photoArray[currentIndex];
-      photoArray[currentIndex] = photoArray[randomIndex];
-      photoArray[randomIndex] = temporaryValue;
+      temporaryValue = array[currentIndex];
+      array[currentIndex] = array[randomIndex];
+      array[randomIndex] = temporaryValue;
     }
 
-    return photoArray;
+    return array;
   };
+
   render() {
     const { galleryColumns } = this.props;
+    const { galleryPhotos } = this.state;
+
     return (
       <Fragment>
-        <Gallery photos={this.randomize(photos)} columns={galleryColumns} onClick={this.openLightbox} />
+        <Gallery photos={galleryPhotos} columns={galleryColumns} onClick={this.openLightbox} />
         <Lightbox
           images={photos}
           onClose={this.closeLightbox}
