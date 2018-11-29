@@ -49,7 +49,7 @@ class App extends Component {
               <Route path="/children" render={() => <Children galleryColumns={galleryColumns} />} />
               <Route path="/events" render={() => <Events galleryColumns={galleryColumns} />} />
               <Route path="/proofing" render={() => <Proofing />} />
-              <Route path="/about" render={() => <About />} />
+              <Route path="/about" render={() => <About galleryColumns={galleryColumns} />} />
               <Route path="/contact" render={() => <Contact />} />
             </div>
           </Fragment>

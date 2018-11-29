@@ -105,8 +105,7 @@ function Contact(props) {
 const styles = theme => ({
   root: {
     flexGrow: 1,
-    paddingLeft: 20,
-    paddingRight: 20,
+    padding: 30,
     marginTop: 40,
   },
   paper: {
