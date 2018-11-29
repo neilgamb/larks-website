@@ -27,7 +27,6 @@ const photos = [
     { src: heads[19], width: 2, height: 3 },
     { src: heads[20], width: 2, height: 3 },
     { src: heads[21], width: 2, height: 3 },
-    { src: heads[22], width: 2, height: 3 },
     { src: heads[23], width: 2, height: 3 },
 ];
 

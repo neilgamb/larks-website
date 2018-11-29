@@ -12,13 +12,14 @@ import hs_11 from './JPEG/hs_11.jpg';
 import hs_12 from './JPEG/hs_12.jpg';
 import hs_13 from './JPEG/hs_13.jpg';
 import hs_14 from './JPEG/hs_14.jpg';
+import hs_15 from './JPEG/hs_15.jpg';
 import hs_16 from './JPEG/hs_16.jpg';
 import hs_17 from './JPEG/hs_17.jpg';
 import hs_18 from './JPEG/hs_18.jpg';
 import hs_19 from './JPEG/hs_19.jpg';
 import hs_20 from './JPEG/hs_20.jpg';
 import hs_21 from './JPEG/hs_21.jpg';
-import hs_22 from './JPEG/hs_22.jpg';
+import hs_23 from './JPEG/hs_23.jpg';
 import hs_24 from './JPEG/hs_24.jpg';
 
 const heads = [
@@ -36,13 +37,14 @@ const heads = [
     hs_12,
     hs_13,
     hs_14,
+    hs_15,
     hs_16,
     hs_17,
     hs_18,
     hs_19,
     hs_20,
     hs_21,
-    hs_22,
+    hs_23,
     hs_24,
 ];
 
