@@ -7,6 +7,7 @@ import Home from './Home';
 import Family from './Family';
 import Children from './Children';
 import Events from './Events';
+import Headshots from './Headshots';
 import Proofing from './Proofing';
 import About from './About';
 import Contact from './Contact';
@@ -48,6 +49,7 @@ class App extends Component {
               <Route path="/family" render={() => <Family galleryColumns={galleryColumns} />} />
               <Route path="/children" render={() => <Children galleryColumns={galleryColumns} />} />
               <Route path="/events" render={() => <Events galleryColumns={galleryColumns} />} />
+              <Route path="/headshots" render={() => <Headshots galleryColumns={galleryColumns} />} />
               <Route path="/proofing" render={() => <Proofing />} />
               <Route path="/about" render={() => <About galleryColumns={galleryColumns} />} />
               <Route path="/contact" render={() => <Contact />} />
