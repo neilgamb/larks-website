@@ -41,11 +41,13 @@ const About = ({ classes, galleryColumns }) => (
           </Grid>
           <Grid item xs={12} sm={6}>
             <Paper elevation={0} className={classes.paper}>
-              <Typography align="justify" variant="subheading" className={classes.bioPhone}>
-                lark<sup>2</sup> | l&auml;rk | <i>informal</i> <b>noun</b> something done for fun,
-                especially something mischievous or daring; an amusing adventure or escapade:
+              <Typography align="justify" variant="body2" className={classes.definition}>
+                <span style={{ fontSize: '1.3rem', fontWeight: 600 }}>lark</span>
+                <sup>2</sup> | l&auml;rk | <i>informal</i> <b>noun</b> something done for fun,
+                especially something mischievous or daring; an amusing adventure or escapade:{' '}
                 <i>I only went along for a lark</i>
-                <br /> <br />
+              </Typography>
+              <Typography align="justify" variant="subheading" className={classes.bio}>
                 Welcome to Lark Elliott Photography! True to my name, on a lark I left a career in
                 banking for a career in photography and have never looked back. I specialize in
                 portraiture because I love the challange of capturing someone&apos;s true
