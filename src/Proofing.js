@@ -31,9 +31,14 @@ const Proofing = ({ classes }) => (
         </Grid>
         <Grid item xs={12}>
           <Paper elevation={0} className={classes.paper}>
-            <Typography align="left" paragraph variant="subheading">
-              1) Follow this link:{' '}
-              <Button className={classes.pixieButton} variant="contained">
+            <Typography align="left" paragraph variant="subheading" className={classes.pixieLink}>
+              <span>1) Follow this link: </span>
+              <Button
+                target="_blank"
+                href="https://larkelliottphotography.pixieset.com/"
+                className={classes.pixieButton}
+                variant="contained"
+              >
                 Launch Pixieset!
               </Button>
             </Typography>
@@ -65,7 +70,12 @@ const styles = theme => ({
     color: theme.palette.text.secondary,
   },
   pixieButton: {
-    marginLeft: 20,
+    marginLeft: 10,
+    textAlign: 'center',
+  },
+  pixieLink: {
+    display: 'flex',
+    alignItems: 'center',
   },
 });
 
