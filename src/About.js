@@ -2,6 +2,7 @@ import React, { Fragment } from 'react';
 import PropTypes from 'prop-types';
 import { Grid, Paper, Typography, withStyles } from '@material-ui/core';
 import bio from './images/bio_bg.jpg';
+import bio_sm from './images/bio_sm.jpg';
 
 const About = ({ classes, galleryColumns }) => (
   <Fragment>
@@ -20,10 +21,10 @@ const About = ({ classes, galleryColumns }) => (
                 Welcome to Lark Elliott Photography! True to my name, on a lark I left a career in
                 banking for a career in photography and have never looked back. I specialize in
                 portraiture because I love the challange of capturing someone&apos;s true
-                personality along with beautiful, natural lighting and background.
+                personality complimented by beautiful, natural lighting and background.
                 <br /> <br />
                 My photo sessions are FUN, no dressing up or props. I want the real you. I request
-                that you be comfortable in what you wear! Outside only and dependent for sunlight.
+                that you be comfortable in what you wear! Outside only and dependent on sunlight.
                 <br /> <br />
                 Come enjoy the adventure with me and always...
                 <br /> <br />
@@ -51,10 +52,10 @@ const About = ({ classes, galleryColumns }) => (
                 Welcome to Lark Elliott Photography! True to my name, on a lark I left a career in
                 banking for a career in photography and have never looked back. I specialize in
                 portraiture because I love the challange of capturing someone&apos;s true
-                personality along with beautiful, natural lighting and background.
+                personality complimented by beautiful, natural lighting and background.
                 <br /> <br />
                 My photo sessions are FUN, no dressing up or props. I want the real you. I request
-                that you be comfortable in what you wear! Outside only and dependent for sunlight.
+                that you be comfortable in what you wear! Outside only and dependent on sunlight.
                 <br /> <br />
                 Come enjoy the adventure with me and always...
                 <br /> <br />
@@ -90,7 +91,7 @@ const styles = theme => ({
     textAlign: 'center',
     color: theme.palette.text.secondary,
     background: 'transparent',
-    backgroundImage: `url(${bio})`,
+    backgroundImage: `url(${bio_sm})`,
     backgroundSize: 'cover',
     height: 200,
     marginTop: 30,
